@@ -1,0 +1,20 @@
+{
+  "name": "full-stack-angular",
+  "version": "1.0.0",
+  "description": "simple MEAN Stack application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nevermindthelabel/full-stack-angular.git"
+  },
+  "keywords": [],
+  "author": "Matt Kilcup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nevermindthelabel/full-stack-angular/issues"
+  },
+  "homepage": "https://github.com/nevermindthelabel/full-stack-angular#readme"
+}
