@@ -5,7 +5,7 @@
         "node": true,
         "es6": true
     },
-    "extends": ["airbnb-base"],
+    "extends": "airbnb-base",
     "rules": {
         "no-duplicate-case":"error",
         "no-empty":"error",
@@ -20,6 +20,10 @@
         "no-multi-spaces": "error",
         "no-unused-vars": "error",
         "camelcase": "error",
+        "no-console":"off",
+        "array-callback-return":"off",
+        "comma-dangle":"off",
+        "prefer-destructuring":"off",
         "indent": [
             "error",
             2
