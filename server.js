@@ -28,6 +28,23 @@ router.route('/issues').get((req, res) => {
   });
 });
 
+router.route('/issues/:id').get((req, res) => {
+  Issue.findById(req.params.id, (err, issue) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res.json(issue);
+    }
+  });
+});
+
+router.route('/issues/add').post((req, res) => {
+  const issue = new Issue(req.body);
+  issue.save().then(issue => {
+    res.status(200).json({ success: 'issue added successfully' });
+  });
+});
+
 app.use('/', router);
 
 app.listen(PORT, () => console.log(`🏃‍  on http://localhost:${PORT}`));
