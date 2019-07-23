@@ -9,10 +9,13 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const router = express.Router();
 
-app.use(express.json());
+app.use(express.json({ extended: false }));
 app.use(cors());
 
-mongoose.connect('mongodb://localhost/MEANstack', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/MEANstack', {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 const connection = mongoose.connection;
 
@@ -44,10 +47,12 @@ router.route('/issues/add').post((req, res) => {
     .save()
     .then(issue => {
       console.log(issue);
+      console.log(req.body);
       res.status(200).json({ success: 'issue added successfully' });
     })
     .catch(err => {
-      res.status(400).send('Issue adding your issue', err);
+      res.status(400).send('Issue adding your issue');
+      console.error(err);
     });
 });
 
@@ -80,8 +85,7 @@ router.route('/issues/delete/:id').delete((req, res) => {
     if (err) {
       res.json(err);
     } else {
-      res.status(200);
-      res.json(issue, 'successful');
+      res.send(`${issue.title} removed successfully`);
     }
   });
 });
