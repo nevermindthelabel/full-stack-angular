@@ -15,11 +15,15 @@ export class IssueService {
     return this.http.get(`${this.uri}/issues`);
   }
 
-  getIssueById(id) {
+  getIssueById(id: number) {
     return this.http.get(`${this.uri}/issues/${id}`);
   }
 
-  addIssue(title, responsible, severity, description) {
+  addIssue
+    (title: string,
+     responsible: string,
+     severity: string,
+     description: string) {
     const issue = {
       title,
       responsible,
@@ -27,6 +31,27 @@ export class IssueService {
       description
     };
     return this.http.post(`${this.uri}/issues/add`, issue);
+  }
+
+  updateIssue
+    (id: number,
+     title: string,
+     description: string,
+     responsible: string,
+     severity: string,
+     status: string) {
+    const issue = {
+      title,
+      description,
+      responsible,
+      severity,
+      status
+    };
+    return this.http.put(`${this.uri}/issues/update/${id}`, issue);
+  }
+
+  deleteIssue(id: number) {
+    return this.http.delete(`${this.uri}/issues/delete/${id}`);
   }
 
 }
