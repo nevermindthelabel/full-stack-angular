@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IssueService } from '../../issue.service';
 
 @Component({
   selector: 'app-create-component',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./create.component.css']
 })
 
-export class CreateComponent { }
+export class CreateComponent implements OnInit {
+
+  constructor(private issueService: IssueService) { }
+
+  ngOnInit() { }
+
+}
