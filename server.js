@@ -56,7 +56,7 @@ router.route('/issues/add').post((req, res) => {
     });
 });
 
-router.route('/issues/update/:id').post((req, res) => {
+router.route('/issues/update/:id').put((req, res) => {
   Issue.findById(req.params.id, (err, issue) => {
     if (err) {
       res.json(err);
@@ -64,11 +64,21 @@ router.route('/issues/update/:id').post((req, res) => {
       res.status(500).send('issue not found');
     } else {
       res.status(200);
-      issue.title = req.body.title;
-      issue.respondible = req.body.responsible;
-      issue.description = req.body.description;
-      issue.severity = req.body.severity;
-      issue.status = req.body.status;
+
+      const
+        {
+          title,
+          responsible,
+          description,
+          severity,
+          status
+        } = req.body;
+
+      issue.title = title;
+      issue.respondible = responsible;
+      issue.description = description;
+      issue.severity = severity;
+      issue.status = status;
 
       issue
         .save()
