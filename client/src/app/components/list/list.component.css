@@ -1,4 +1,7 @@
 table {
-  width: 75vw;
-  margin: auto;
+  width: 100%;
+}
+
+.mat-column-actions {
+  text-align: center;
 }
