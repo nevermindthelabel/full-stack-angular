@@ -8,6 +8,7 @@ import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatToolbarModule,
   MatFormFieldModule,
@@ -45,7 +46,8 @@ import { IssueService } from './issue.service';
     MatCardModule,
     MatTableModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   providers: [IssueService],
   bootstrap: [AppComponent]
