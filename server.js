@@ -93,9 +93,9 @@ router.route('/issues/update/:id').put((req, res) => {
 router.route('/issues/delete/:id').delete((req, res) => {
   Issue.findByIdAndRemove({ _id: req.params.id }, (err, issue) => {
     if (err) {
-      res.json(err);
+      console.error(err);
     } else {
-      res.send(`${issue.title} removed successfully`);
+      res.status(204).send(`${issue.title} removed successfully`);
     }
   });
 });
