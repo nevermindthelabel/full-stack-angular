@@ -29,7 +29,7 @@ export class ListComponent implements OnInit {
   fetchIssues() {
     this.issueService.getIssues().subscribe((data: Issue[]) => {
       this.issues = data;
-      console.log(`${this}`);
+      console.log(this.issues);
     });
   }
 
