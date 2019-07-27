@@ -34,7 +34,7 @@ export class IssueService {
   }
 
   updateIssue
-    (id: number,
+    (id: string,
      title: string,
      description: string,
      responsible: string,
@@ -50,7 +50,8 @@ export class IssueService {
     return this.http.put(`${this.uri}/issues/update/${id}`, issue);
   }
 
-  deleteIssue(id: number) {
+  deleteIssue(id: string) {
+    console.log(typeof id, id);
     return this.http.delete(`${this.uri}/issues/delete/${id}`);
   }
 
