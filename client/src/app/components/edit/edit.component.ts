@@ -13,7 +13,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class EditComponent implements OnInit {
 
-  id: string;
+  id: any;
   issue: any = {};
   updateForm: FormGroup;
 
