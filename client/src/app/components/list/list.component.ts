@@ -33,11 +33,11 @@ export class ListComponent implements OnInit {
     });
   }
 
-  editIssue(id: number) {
+  editIssue(id: any) {
     this.router.navigate([`/edit/${id}`]);
   }
 
-  deleteIssue(id: number) {
+  deleteIssue(id: any) {
     this.issueService.deleteIssue(id).subscribe(() => {
       this.fetchIssues();
     });
