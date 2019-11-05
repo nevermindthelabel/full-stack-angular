@@ -34,6 +34,6 @@
     "cors": "^2.8.5",
     "eslint-utils": "^1.4.2",
     "express": "^4.17.1",
-    "mongoose": "^5.6.5"
+    "mongoose": "^5.7.5"
   }
 }
